@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@master
 
       - name: Set up Node.js version
-        uses: ./.github/actions/Node.js
+        uses: ./.github/workflows/instal_build_run.yml
         with:
             node-version: '12.x'
 
