@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Install, build and run nodejs app
  
 on:
   push:
@@ -11,8 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - name: Set up Node.js version
+        uses: node.js
         with:
             node-version: '12.x'
 
