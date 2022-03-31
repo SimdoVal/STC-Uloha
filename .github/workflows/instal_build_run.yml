@@ -5,16 +5,18 @@ on:
     branches: [ node-project ]
  
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        node: [ '12', '14', '16' ]
+    name: Node ${{ matrix.node }} sample
     steps:
-      - uses: actions/checkout@master
-
-      - name: Set up Node.js version
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v3
         with:
-            node-version: '12.x'
+          node-version: ${{ matrix.node }}
 
       - name: Perform install, build and start commands
         run: |
