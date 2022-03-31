@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@master
 
       - name: Set up Node.js version
-        uses: actions/node.js@node-project
+        uses: actions/node.js@master
         with:
             node-version: '12.x'
 
